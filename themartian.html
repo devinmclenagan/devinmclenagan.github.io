@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="css/styles.css">
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>local modules</title>
+    <!-- linking to PyScript assets -->
+    <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" /> -->
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+   <py-env>
+    - pandas
+    - paths:
+        - showitems.py
+   </py-env> 
+    <div class="headernewpage">
+        <h1>Searchology</h1>
+        <p>ENAE380 Final Project</p>
+    </div>
+
+
+<div class="navbar">
+    <a href="index.html">Home Page</a>
+    <a href="searchpage.html">Search</a>
+    <a href="#">Add a Recommendation</a>
+    <a href="#">My Account</a>
+  </div>
+<h1>The Martian</h1>
+<div class = "container">
+    <img src="images\themartianposter.jpg" alt="The Martian";/>
+    <p>An astronaut becomes stranded on Mars after his team assume him dead, and must rely on his ingenuity to find a way to signal to Earth that he is alive and can survive until a potential rescue. Director: Ridley Scott <a href="https://www.imdb.com/title/tt3659388/">See more</a></p>
+</div>
+This is what fellow users recommend:   
+    <py-script>
+        from showitems import show_items
+        import pandas as pd
+        from pyodide.http import open_url
+        url_content = open_url("https://raw.githubusercontent.com/devinmclenagan/enae380final/main/userinputs.csv?token=GHSAT0AAAAAAB4ISYI2FHPMEDCIK32MBUCOY4WUKFQ")
+        df = pd.read_csv(url_content)
+        itemslist = df.values.tolist()
+        print(show_items(itemslist,"The Martian"))
+    </py-script>
+</body>
+</html>

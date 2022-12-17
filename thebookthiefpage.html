@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="css/styles.css">
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>local modules</title>
+    <!-- linking to PyScript assets -->
+    <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" /> -->
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+   <py-env>
+    - pandas
+    - paths:
+        - showitems.py
+   </py-env> 
+    <div class="headernewpage">
+        <h1>Searchology</h1>
+        <p>ENAE380 Final Project</p>
+    </div>
+
+
+<div class="navbar">
+    <a href="index.html">Home Page</a>
+    <a href="searchpage.html">Search</a>
+  </div>
+<h1>The Book Thief</h1>
+<div class = "container">
+    <img src="images\thebookthiefposter.jpg" alt="The Book Thief";/>
+    <p>By her brother's graveside, Liesel's life is changed when she picks up a single object, partially hidden in the snow. It is The Gravedigger's Handbook, left behind there by accident, and it is her first act of book thievery. So begins a love affair with books and words, as Liesel, with the help of her accordian-playing foster father, learns to read. Soon she is stealing books from Nazi book-burnings, the mayor's wife's library, wherever there are books to be found.<a href="https://www.goodreads.com/book/show/19063.The_Book_Thief?from_search=true&from_srp=true&qid=AXXRKej4tA&rank=1">See more</a></p>
+</div>
+This is what fellow users recommend:   
+    <py-script>
+        from showitems import show_items
+        import pandas as pd
+        from pyodide.http import open_url
+        url_content = open_url("https://raw.githubusercontent.com/devinmclenagan/enae380final/main/userinputs.csv?token=GHSAT0AAAAAAB4ISYI2FHPMEDCIK32MBUCOY4WUKFQ")
+        df = pd.read_csv(url_content)
+        itemslist = df.values.tolist()
+        print(show_items(itemslist,"The Book Thief"))
+    </py-script>
+</body>
+</html>

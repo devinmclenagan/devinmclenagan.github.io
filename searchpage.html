@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="css/styles.css">
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" /> 
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - pandas
+        - paths:
+            - showitems.py
+    </py-env>
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+  </head>
+  <div class="topnav">
+    <a class="active" href="C:\Users\dmcle\.vscode\ENAE380\final project\index.html">Home</a>
+
+ 
+    <div class="search-container">
+
+        <input id="userinput" type="text" placeholder="Search..." name="search">
+        <button id="click-btn" type="submit" class="button" pys-onClick="user_input">Submit</button>
+        </div>
+    
+  </div>
+  <p> Here's what your fellow users recommend: </p>
+  <div id = "result"></div>
+<py-script>
+  from showitems import show_items
+  import pandas as pd
+  from js import document
+  from pyodide.http import open_url
+  def user_input(*args, **kwargs):
+    url_content = open_url("https://raw.githubusercontent.com/devinmclenagan/enae380final/main/userinputs.csv?token=GHSAT0AAAAAAB4ISYI2FHPMEDCIK32MBUCOY4WUKFQ")
+    df = pd.read_csv(url_content)
+    itemslist = df.values.tolist()
+    item = document.getElementById("userinput").values
+    result = show_items(itemslist,str(item))
+    output = Element("result")
+    output.write(result)
+</py-script>
+        </div>
+    </div>
+
+  </html>
