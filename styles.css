@@ -1,0 +1,251 @@
+
+.header {
+    padding: 20px; /* some padding */
+    text-align: center; /* center the text */
+    background: #1a801f; /* green background */
+    color: white; /* white text color */
+    }
+  
+  /* Increase the font size of the <h1> element */
+  .header h1 {
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .header p {
+    color:rgb(255, 255, 255);
+    font-size: 20 px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+  }
+.headernewpage {
+    padding: 10 px;
+    text-align: center; /* center the text */
+    background: #60a763; /* green background */
+    color: white; /* white text color */
+    }
+    .headernewpage h1 {
+        font-size: 20 px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        color:rgb(255, 255, 255);
+    }
+    .headernewpage p {
+        font-size: 10 px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        color:rgb(232, 232, 232);
+
+    }
+    /* Style the top navigation bar */
+.navbar {
+    overflow: hidden; /* Hide overflow */
+    background-color: rgb(195, 195, 195); /* Dark background color */
+  }
+
+  /* Style the navigation bar links */
+.navbar a {
+    float: left; /* Make sure that the links stay side-by-side */
+    display: block; /* Change the display to block, for responsive reasons (see below) */
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+    padding: 14px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underline */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  /* Right-aligned link */
+  .navbar a.right {
+    float: right; /* Float a link to the right */
+  }
+  
+  /* Change color on hover/mouse-over */
+  .navbar a:hover {
+    background-color: #ddd; /* Grey background color */
+    color: black; /* Black text color */
+  }
+  /* Ensure proper sizing */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Column container */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
+    flex: 30%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding: 20px; /* Some padding */
+  }
+  
+  /* Main column */
+  .main {
+    flex: 70%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+  }
+
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  .footer {
+    padding: 10px; /* Some padding */
+    text-align: center; /* Center text*/
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;
+    background: #ddd; /* Grey background */
+  }
+
+  /* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  /* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+  
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+  /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+  @media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text] {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      border: 1px solid #ccc;
+    }
+  }
+
+.images {
+    padding: 5 px;
+}
+.images a {
+    
+    float: left; /* Make sure that the links stay side-by-side */
+    display: block; /* Change the display to block, for responsive reasons (see below) */
+    /*text-align: center; /* Center the text */
+    padding: 5px 5px; /* Add some padding */
+}
+/* .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  } */
+  /* Right-aligned link */
+  /*.images a.right {
+    float: right; /* Float a link to the right */
+
+.text {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+    .text h1 {
+        font-size: 20 px;
+        color:rgb(0, 0, 0);
+        text-align: center;
+    }
+    .text p {
+        font-size: 10 px;
+        color:rgb(51, 51, 51);
+        text-align: center;
+    }
+    .text q {
+        font-size: 10 px;
+        color:rgb(51, 51, 51);
+        text-align: right;
+    }
+.container {
+    width: 300 px;
+    display: flex;
+    align-items: center;
+}
+    .container img {
+        width: 100 px;
+        margin-right: 20 px;
+    }
+    .container h1 {
+        font-size: 20 px;
+        color:rgb(51, 51, 51);
+        margin-left: 20;
+    }
+    .container p{
+        font-size: 10 px;
+        color:rgb(51, 51, 51);
+        margin-left: 20;
+    }
+
+
